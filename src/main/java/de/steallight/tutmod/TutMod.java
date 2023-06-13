@@ -1,6 +1,7 @@
 package de.steallight.tutmod;
 
 import com.mojang.logging.LogUtils;
+import de.steallight.tutmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -42,6 +43,7 @@ public class TutMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
